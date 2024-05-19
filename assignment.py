@@ -38,6 +38,6 @@ def friends_main(ip):
 ip = 'V'
 candidates_contacted = friends_main(ip)
 #print(candidates_contacted)
-#print(" ".join(candidates_contacted))
+print(" ".join(candidates_contacted))
 
 
