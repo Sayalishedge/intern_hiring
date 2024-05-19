@@ -16,7 +16,7 @@ def friends(ip):
     og_friends = [k for k, v in friendships.items() if ip in v]
     return og_friends
 
-def find(ip):
+def friends_main(ip):
     og_friends = friends(ip)
     stack = [ip] + og_friends
     contacted = set()
@@ -35,8 +35,9 @@ def find(ip):
     
     return ans
 
-ip = 'M'
-candidates_contacted = find(ip)
-print(" ".join(candidates_contacted))
+ip = 'V'
+candidates_contacted = friends_main(ip)
+#print(candidates_contacted)
+#print(" ".join(candidates_contacted))
 
 
