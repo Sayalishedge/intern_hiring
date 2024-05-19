@@ -9,9 +9,9 @@ Approach : BFS(Breadth First Search)
   Python implementation to find all the eligible candidates in the list using BFS.
   
   assignment.py : 
-  1] Friendship dictionary : Friends of the candidates where the key is candidate and value is the list of friends.
-  2] def friends(ip): This function finds all the candidates who have given candidate (ip) as a friend.
-  3] def friends_main (ip) : Performs BFS and returns a list of all contacted candidates including itself and it's friends
+  1. Friendship dictionary : Friends of the candidates where the key is candidate and value is the list of friends.
+  2. def friends(ip): This function finds all the candidates who have given candidate (ip) as a friend.
+  3. def friends_main (ip) : Performs BFS and returns a list of all contacted candidates including itself and it's friends
   Initializes a queue with the starting candidate and their initial friends.
         - Uses a set to keep track of contacted candidates.
         - Iteratively explores each candidate's friends until all reachable candidates are contacted.
