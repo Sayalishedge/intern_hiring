@@ -35,7 +35,7 @@ def friends_main(ip):
     
     return ans
 
-ip = 'V'
+ip = 'M'
 candidates_contacted = friends_main(ip)
 #print(candidates_contacted)
 print(" ".join(candidates_contacted))
