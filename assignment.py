@@ -1,4 +1,5 @@
-#Definied friendships dictionary
+
+# Define the friendships as a dictionary
 friendships = {
     'A': ['B', 'C', 'J'],
     'D': ['E', 'F', 'G'],
@@ -11,35 +12,31 @@ friendships = {
     'V': ['W', 'X', 'Y', 'Z']
 }
 
-def og_friends(candidate):
-    # Person who have the given candidate as a friend
-    friends_of_candidate = [key for key, val in friendships.items() if candidate in val]
-    return friends_of_candidate
+def friends(ip):
+    og_friends = [k for k, v in friendships.items() if ip in v]
+    return og_friends
 
-def friends_main(ip):
-    #Initial friends of the candidate
-    initial_friends = og_friends(ip)
-    #Initialize the queue with the starting candidate and initial friends
-    queue = [ip] + initial_friends
-    #Keep track of contacted candidates
+def find(ip):
+    og_friends = friends(ip)
+    stack = [ip] + og_friends
     contacted = set()
-    #Order of contacted candidates
-    contacted_list = []
+    ans = []
 
-    while queue:
-        current = queue.pop(0)
-        if current not in contacted:
-            contacted.add(current)
-            contacted_list.append(current)
-            # Add current's friends to the queue
-            if current in friendships:
-                for friend in friendships[current]:
+    while stack:
+        ch = stack.pop()
+        if ch not in contacted:
+            contacted.add(ch)
+            ans.append(ch)
+            # Add current's friends to the stack
+            if ch in friendships:
+                for friend in friendships[ch]:
                     if friend not in contacted:
-                        queue.append(friend)
+                        stack.append(friend)
     
-    return contacted_list
+    return ans
 
-if __name__ == "__main__":
-    ip_candidate = 'D'
-    contacted_candidates = friends_main(ip_candidate)
-    print(contacted_candidates)
+ip = 'M'
+candidates_contacted = find(ip)
+print(" ".join(candidates_contacted))
+
+
